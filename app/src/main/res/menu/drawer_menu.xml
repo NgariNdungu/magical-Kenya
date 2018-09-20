@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <group android:id="@+id/main"
+        android:checkableBehavior="single">
+        <item android:id="@+id/menu_places"
+            android:title="@string/places"
+            android:checked="true"/>
+        <item android:id="@+id/menu_events"
+            android:title="@string/events"/>
+        <item android:id="@+id/menu_people"
+            android:title="@string/people"/>
+        <item android:id="@+id/menu_sites"
+            android:title="@string/sites"/>
+    </group>
+
+</menu>
