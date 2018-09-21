@@ -7,7 +7,6 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ListView;
-import android.widget.TextView;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -35,7 +34,12 @@ public class PlacesFragment extends Fragment {
                 new Attraction("Maralal", null,
                         "Home to the world famous camel race. The gateway to Northern Kenya"),
                 new Attraction("South Horr", null,
-                        "Nestled between two hills, the village offers some spectacular views")
+                        "Nestled between two hills, the village offers some spectacular views",
+                        R.drawable.south_horr),
+                new Attraction("Sibiloi National Park", null,
+                        "Recently accorded World Heritage status, there's plenty to see."),
+                new Attraction("Turkana", "The cradle of mankind",
+                        "This place is remote, and beautiful and the journey even more so.")
         ));
         // set list as arrayadapter data source
         // set adapter on the listview

@@ -7,6 +7,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import java.util.ArrayList;
@@ -16,8 +17,12 @@ import butterknife.ButterKnife;
 import ke.co.openmaps.createchs.magicalkenya.data.Attraction;
 
 public class AttractionsAdapter extends ArrayAdapter<Attraction> {
-    @BindView(R.id.attraction_name) TextView nameTView;
-    @BindView(R.id.attraction_desc) TextView descTView;
+    @BindView(R.id.attraction_name)
+    TextView nameTView;
+    @BindView(R.id.attraction_desc)
+    TextView descTView;
+    @BindView(R.id.attraction_image)
+    ImageView imageView;
 
     public AttractionsAdapter(@NonNull Context context, @NonNull ArrayList<Attraction> attractions) {
         super(context, 0, attractions);
@@ -35,6 +40,11 @@ public class AttractionsAdapter extends ArrayAdapter<Attraction> {
         ButterKnife.bind(this, convertView);
         nameTView.setText(currentAttraction.getName());
         descTView.setText(currentAttraction.getDescription());
+        if (currentAttraction.getImage() != 0) {
+            imageView.setImageResource(currentAttraction.getImage());
+        } else {
+            imageView.setVisibility(View.GONE);
+        }
         return convertView;
     }
 }

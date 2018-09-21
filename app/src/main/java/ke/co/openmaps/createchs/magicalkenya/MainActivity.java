@@ -15,6 +15,7 @@ public class MainActivity extends AppCompatActivity {
 
     @BindView(R.id.drawer_layout) DrawerLayout drawerLayout;
     @BindView(R.id.nav_view) NavigationView navigationView;
+    private int container = R.id.content;
 
 
     @Override
@@ -23,7 +24,6 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         final FragmentManager fragmentManager = getSupportFragmentManager();
-        fragmentManager.beginTransaction().add(R.id.content, new PlacesFragment()).commit();
         ButterKnife.bind(this);
         navigationView.setNavigationItemSelectedListener(new NavigationView.OnNavigationItemSelectedListener() {
             @Override
@@ -33,23 +33,27 @@ public class MainActivity extends AppCompatActivity {
                 // switch fragment
                 switch (item.getItemId()) {
                     case R.id.menu_places:
-                        fragmentManager.beginTransaction().replace(R.id.content, new PlacesFragment()).commit();
+                        fragmentManager.beginTransaction().replace(container, new PlacesFragment()).commit();
                         break;
                     case R.id.menu_events:
-                        fragmentManager.beginTransaction().replace(R.id.content, new EventsFragment()).commit();
+                        fragmentManager.beginTransaction().replace(container, new EventsFragment()).commit();
                         break;
                     case R.id.menu_people:
-                        fragmentManager.beginTransaction().replace(R.id.content, new PeopleFragment()).commit();
+                        fragmentManager.beginTransaction().replace(container, new PeopleFragment()).commit();
                         break;
                     case R.id.menu_sites:
-                        fragmentManager.beginTransaction().replace(R.id.content, new SitesFragment()).commit();
+                        fragmentManager.beginTransaction().replace(container, new SitesFragment()).commit();
                         break;
                     default:
-                        fragmentManager.beginTransaction().replace(R.id.content, new PlacesFragment()).commit();
+                        fragmentManager.beginTransaction().replace(container, new PlacesFragment()).commit();
                 }
                 drawerLayout.closeDrawers();
                 return true;
             }
         });
+        // load the places fragment if no fragment is added
+        if (fragmentManager.getFragments().size() == 0) {
+            fragmentManager.beginTransaction().add(container, new PlacesFragment()).commit();
+        }
     }
 }

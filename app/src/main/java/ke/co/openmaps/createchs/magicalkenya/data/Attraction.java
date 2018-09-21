@@ -6,7 +6,7 @@ public class Attraction {
     private String mName;
     private String mTag;
     private String mDescription;
-    private int mImage;
+    private int mImage = 0;
 
     public Attraction(String name, @Nullable String tag, String description) {
         this.mName = name;
