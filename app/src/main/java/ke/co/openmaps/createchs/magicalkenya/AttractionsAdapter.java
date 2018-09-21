@@ -11,9 +11,14 @@ import android.widget.TextView;
 
 import java.util.ArrayList;
 
+import butterknife.BindView;
+import butterknife.ButterKnife;
 import ke.co.openmaps.createchs.magicalkenya.data.Attraction;
 
 public class AttractionsAdapter extends ArrayAdapter<Attraction> {
+    @BindView(R.id.attraction_name) TextView nameTView;
+    @BindView(R.id.attraction_desc) TextView descTView;
+
     public AttractionsAdapter(@NonNull Context context, @NonNull ArrayList<Attraction> attractions) {
         super(context, 0, attractions);
     }
@@ -27,9 +32,7 @@ public class AttractionsAdapter extends ArrayAdapter<Attraction> {
             );
         }
         Attraction currentAttraction = getItem(position);
-        TextView nameTView = (TextView) convertView.findViewById(R.id.attraction_name);
-        TextView descTView = (TextView) convertView.findViewById(R.id.attraction_desc);
-
+        ButterKnife.bind(this, convertView);
         nameTView.setText(currentAttraction.getName());
         descTView.setText(currentAttraction.getDescription());
         return convertView;
