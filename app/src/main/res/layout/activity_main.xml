@@ -17,6 +17,9 @@
             android:layout_height="?attr/actionBarSize"
             android:background="?attr/colorPrimary"
             android:elevation="4dp"
+            app:titleTextColor="@color/text_color_primary"
+            app:subtitleTextColor="@color/text_color_primary"
+            app:subtitle="@string/places"
             android:theme="@style/ThemeOverlay.AppCompat.ActionBar" />
 
         <FrameLayout
