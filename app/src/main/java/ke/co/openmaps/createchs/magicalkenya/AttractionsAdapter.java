@@ -19,6 +19,8 @@ import ke.co.openmaps.createchs.magicalkenya.data.Attraction;
 public class AttractionsAdapter extends ArrayAdapter<Attraction> {
     @BindView(R.id.attraction_name)
     TextView nameTView;
+    @BindView(R.id.attraction_tag)
+    TextView tagTView;
     @BindView(R.id.attraction_desc)
     TextView descTView;
     @BindView(R.id.attraction_image)
@@ -38,12 +40,22 @@ public class AttractionsAdapter extends ArrayAdapter<Attraction> {
         }
         Attraction currentAttraction = getItem(position);
         ButterKnife.bind(this, convertView);
+        // set view content
         nameTView.setText(currentAttraction.getName());
         descTView.setText(currentAttraction.getDescription());
+
         if (currentAttraction.getImage() != 0) {
             imageView.setImageResource(currentAttraction.getImage());
+            imageView.setVisibility(View.VISIBLE);
         } else {
             imageView.setVisibility(View.GONE);
+        }
+
+        if (currentAttraction.getTag() != null) {
+            tagTView.setText(currentAttraction.getTag());
+            tagTView.setVisibility(View.VISIBLE);
+        } else {
+            tagTView.setVisibility(View.GONE);
         }
         return convertView;
     }

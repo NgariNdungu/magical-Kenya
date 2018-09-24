@@ -19,4 +19,8 @@
         <item name="android:textAppearance">@style/TextAppearance.AppCompat.Large</item>
     </style>
 
+    <style name="TextTagStyle" parent="TextDefaultStyle">
+        <item name="android:textStyle">italic</item>
+    </style>
+
 </resources>

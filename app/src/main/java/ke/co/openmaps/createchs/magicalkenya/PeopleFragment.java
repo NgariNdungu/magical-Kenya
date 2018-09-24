@@ -16,7 +16,7 @@ import butterknife.ButterKnife;
 import ke.co.openmaps.createchs.magicalkenya.data.Attraction;
 
 /**
- * A simple {@link Fragment} subclass.
+ * Fragment to provide data on people
  */
 public class PeopleFragment extends Fragment {
 
@@ -31,7 +31,7 @@ public class PeopleFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        View rootView = inflater.inflate(R.layout.default_list, container,false);
+        View rootView = inflater.inflate(R.layout.default_list, container, false);
         ButterKnife.bind(this, rootView);
 
         // list of people

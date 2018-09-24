@@ -14,7 +14,7 @@ import java.util.Arrays;
 import ke.co.openmaps.createchs.magicalkenya.data.Attraction;
 
 /**
- * A simple {@link Fragment} subclass.
+ * Fragment to provide data for places
  */
 public class PlacesFragment extends Fragment {
 
@@ -30,7 +30,7 @@ public class PlacesFragment extends Fragment {
         // create list of places
         ArrayList<Attraction> places = new ArrayList<>(Arrays.asList(
                 new Attraction("Loiyangalani", null,
-                   "Explore the lake, go mountain climbing or dance with the people",
+                        "Explore the lake, go mountain climbing or dance with the people",
                         R.drawable.loiyangalani),
                 new Attraction("Maralal", null,
                         "Home to the world famous camel race. The gateway to Northern Kenya",
@@ -45,11 +45,11 @@ public class PlacesFragment extends Fragment {
                         "This place is remote, and beautiful and the journey even more so.",
                         R.drawable.turkana)
         ));
-        // set list as arrayadapter data source
-        // set adapter on the listview
-        View rootView = inflater.inflate(R.layout.default_list, container,false);
+
+        View rootView = inflater.inflate(R.layout.default_list, container, false);
         ListView list = (ListView) rootView.findViewById(R.id.list);
-        list.setAdapter(new AttractionsAdapter(getContext(),places));
+        // set adapter on the listview
+        list.setAdapter(new AttractionsAdapter(getContext(), places));
         return rootView;
     }
 

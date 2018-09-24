@@ -30,10 +30,19 @@
         tools:text="Loyiangalani" />
 
     <TextView
-        android:id="@+id/attraction_desc"
+        android:id="@+id/attraction_tag"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         app:layout_constraintTop_toBottomOf="@id/attraction_name"
+        app:layout_constraintBottom_toTopOf="@id/attraction_desc"
+        style="@style/TextTagStyle"
+        tools:text="Culture unfiltered"/>
+
+    <TextView
+        android:id="@+id/attraction_desc"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/attraction_tag"
         app:layout_constraintBottom_toBottomOf="parent"
         android:lines="1"
         android:ellipsize="end"

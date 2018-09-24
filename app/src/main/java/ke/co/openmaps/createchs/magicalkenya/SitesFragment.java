@@ -17,7 +17,7 @@ import butterknife.ButterKnife;
 import ke.co.openmaps.createchs.magicalkenya.data.Attraction;
 
 /**
- * A simple {@link Fragment} subclass.
+ * Fragment to provide data on sites
  */
 public class SitesFragment extends Fragment {
 
@@ -32,7 +32,7 @@ public class SitesFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        View rootView = inflater.inflate(R.layout.default_list, container,false);
+        View rootView = inflater.inflate(R.layout.default_list, container, false);
         ButterKnife.bind(this, rootView);
         // list of sites
         ArrayList<Attraction> sites = new ArrayList<>(Arrays.asList(

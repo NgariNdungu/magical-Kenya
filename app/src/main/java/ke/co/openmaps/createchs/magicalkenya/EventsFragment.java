@@ -17,7 +17,7 @@ import butterknife.ButterKnife;
 import ke.co.openmaps.createchs.magicalkenya.data.Attraction;
 
 /**
- * A simple {@link Fragment} subclass.
+ * Fragment to provide data on events
  */
 public class EventsFragment extends Fragment {
 

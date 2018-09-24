@@ -8,7 +8,6 @@ import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.MenuItem;
 import android.support.v7.widget.Toolbar;
 
@@ -17,11 +16,14 @@ import butterknife.ButterKnife;
 
 public class MainActivity extends AppCompatActivity {
 
-    @BindView(R.id.drawer_layout) DrawerLayout drawerLayout;
-    @BindView(R.id.nav_view) NavigationView navigationView;
-    private int container = R.id.content;
+    @BindView(R.id.drawer_layout)
+    DrawerLayout drawerLayout;
+    @BindView(R.id.nav_view)
+    NavigationView navigationView;
     @BindView(R.id.toolbar)
     Toolbar toolbar;
+
+    private int container = R.id.content;
 
 
     @Override
@@ -59,7 +61,7 @@ public class MainActivity extends AppCompatActivity {
                     default:
                         fragmentManager.beginTransaction().replace(container, new PlacesFragment()).commit();
                 }
-                // set actionbar title
+                // set actionbar subtitle
                 actionBar.setSubtitle(item.getTitle());
                 drawerLayout.closeDrawers();
                 return true;
