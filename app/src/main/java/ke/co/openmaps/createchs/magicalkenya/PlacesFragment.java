@@ -1,6 +1,7 @@
 package ke.co.openmaps.createchs.magicalkenya;
 
 
+import android.content.res.Resources;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
@@ -27,22 +28,18 @@ public class PlacesFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
+        Resources res = getResources();
         // create list of places
         ArrayList<Attraction> places = new ArrayList<>(Arrays.asList(
-                new Attraction("Loiyangalani", null,
-                        "Explore the lake, go mountain climbing or dance with the people",
+                new Attraction(res.getStringArray(R.array.place_loiyangalani),
                         R.drawable.loiyangalani),
-                new Attraction("Maralal", null,
-                        "Home to the world famous camel race. The gateway to Northern Kenya",
+                new Attraction(res.getStringArray(R.array.place_maralal),
                         R.drawable.maralal),
-                new Attraction("South Horr", null,
-                        "Nestled between two hills, the village offers some spectacular views",
+                new Attraction(res.getStringArray(R.array.place_south_horr),
                         R.drawable.south_horr),
-                new Attraction("Sibiloi National Park", null,
-                        "Recently accorded World Heritage status, there's plenty to see.",
+                new Attraction(res.getStringArray(R.array.place_sibiloi),
                         R.drawable.sibiloi),
-                new Attraction("Turkana", "The cradle of mankind",
-                        "This place is remote, and beautiful and the journey even more so.",
+                new Attraction(res.getStringArray(R.array.place_turkana),
                         R.drawable.turkana)
         ));
 

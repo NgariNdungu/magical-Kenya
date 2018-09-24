@@ -38,12 +38,15 @@ public class AttractionsAdapter extends ArrayAdapter<Attraction> {
                     R.layout.attraction_list_item, parent, false
             );
         }
+
+        // get attraction at current position
         Attraction currentAttraction = getItem(position);
         ButterKnife.bind(this, convertView);
         // set view content
         nameTView.setText(currentAttraction.getName());
         descTView.setText(currentAttraction.getDescription());
 
+        // set the attraction image if available else remove ImageView from item
         if (currentAttraction.getImage() != 0) {
             imageView.setImageResource(currentAttraction.getImage());
             imageView.setVisibility(View.VISIBLE);
@@ -51,7 +54,8 @@ public class AttractionsAdapter extends ArrayAdapter<Attraction> {
             imageView.setVisibility(View.GONE);
         }
 
-        if (currentAttraction.getTag() != null) {
+        // set the tag text if available else remove the tag TextView from item
+        if (!currentAttraction.getTag().isEmpty()) {
             tagTView.setText(currentAttraction.getTag());
             tagTView.setVisibility(View.VISIBLE);
         } else {

@@ -1,11 +1,123 @@
 <resources>
     <string name="app_name">Magical Kenya</string>
 
-    <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="places">Places</string>
     <string name="events">Events</string>
     <string name="people">People</string>
     <string name="sites">Sites</string>
     <string name="description">Nestled at the southern edge of L.Turkana, it\'s a place rich in culture</string>
+
+    <!--
+        Data for attractions formatted as:
+           - name
+           - tag
+           - description
+    -->
+    <!-- places -->
+    <string-array name="place_loiyangalani">
+        <item>Loiyangalani</item>
+        <item></item>
+        <item>Explore the lake, go mountain climbing or dance with the people</item>
+    </string-array>
+    <string-array name="place_maralal">
+        <item>Maralal</item>
+        <item></item>
+        <item>Home to the world famous camel race. The gateway to Northern Kenya</item>
+    </string-array>
+    <string-array name="place_south_horr">
+        <item>South Horr</item>
+        <item></item>
+        <item>Nestled between two hills, the village offers some spectacular views</item>
+    </string-array>
+    <string-array name="place_sibiloi">
+        <item>Sibiloi National Park</item>
+        <item></item>
+        <item>Recently accorded World Heritage status, there's plenty to see.</item>
+    </string-array>
+    <string-array name="place_turkana">
+        <item>Turkana</item>
+        <item>The cradle of mankind</item>
+        <item>This place is remote, and beautiful and the journey even more so.</item>
+    </string-array>
+
+    <!-- sites -->
+    <string-array name="site_fortjesus">
+        <item>Fort Jesus</item>
+        <item></item>
+        <item>Standing high over the Mombasa harbor, this museum is steeped in history</item>
+    </string-array>
+    <string-array name="site_giraffe_center">
+        <item>Giraffe Center</item>
+        <item></item>
+        <item>Come feed the giraffes just outside Nairobi</item>
+    </string-array>
+    <string-array name="site_ol_pejeta">
+        <item>Ol Pejeta Chimpanzee Sanctuary</item>
+        <item></item>
+        <item>Home to rescued chimps from central and east Africa</item>
+    </string-array>
+    <string-array name="site_lamu">
+        <item>Lamu Old Town</item>
+        <item></item>
+        <item>A UNESCO World Heritage Site, a place with a unique culture and endearing atmosphere</item>
+    </string-array>
+    <string-array name="site_mt_kenya">
+        <item>Mt. Kenya National Park</item>
+        <item></item>
+        <item>Mt. Kenya is Africa's second highest peak. A trek to point Lenana offers breathtaking views</item>
+    </string-array>
+
+    <!-- events -->
+    <string-array name="event_camel_derby">
+        <item>Maralal Camel Derby</item>
+        <item></item>
+        <item>Come race on camel back! Held in Maralal town every September</item>
+    </string-array>
+    <string-array name="event_lewa_marathon">
+        <item>Lewa Marathon</item>
+        <item></item>
+        <item>Race with the animals in the Lewa conservancy for a noble cause</item>
+    </string-array>
+    <string-array name="event_rhino_charge">
+        <item>Rhino Charge</item>
+        <item>Wildest 4x4 event</item>
+        <item>Tackle the toughest terrains to help save our rhinos</item>
+    </string-array>
+    <string-array name="event_lamu_festival">
+        <item>Lamu Cultural Festival</item>
+        <item></item>
+        <item>Experience Lamu culture first-hand, catch the donkey races</item>
+    </string-array>
+    <string-array name="event_turkana_festival">
+        <item>L. Turkana Festival</item>
+        <item></item>
+        <item>Experience colour and culture of the communities from Loyiangalani</item>
+    </string-array>
+
+    <!-- people -->
+    <string-array name="people_el_molo">
+        <item>El Molo</item>
+        <item>"Kenya's smallest tribe"</item>
+        <item>Living by the shores of Lake Turkana, they have a unique lifestyle that is quickly dying out</item>
+    </string-array>
+    <string-array name="people_maasai">
+        <item>Maasai</item>
+        <item></item>
+        <item>Probably Africa's best known tribe, with a vibrant culture that has survived the ages</item>
+    </string-array>
+    <string-array name="people_samburu">
+        <item>Samburu</item>
+        <item></item>
+        <item>A close cousin to the Maasai found in Northern Kenya with a somewhat similar culture</item>
+    </string-array>
+    <string-array name="people_swahili">
+        <item>Swahili</item>
+        <item></item>
+        <item>A generalization of the coastal tribes. A welcoming people with a relaxed lifestyle</item>
+    </string-array>
+    <string-array name="people_turkana">
+        <item>Turkana</item>
+        <item></item>
+        <item>A pastoral community found around the shores of Lake Turkana little touched by urbanisation</item>
+    </string-array>
 </resources>

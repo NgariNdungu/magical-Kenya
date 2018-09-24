@@ -1,13 +1,13 @@
 package ke.co.openmaps.createchs.magicalkenya;
 
 
+import android.content.res.Resources;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ListView;
-import android.widget.TextView;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -34,18 +34,15 @@ public class SitesFragment extends Fragment {
                              Bundle savedInstanceState) {
         View rootView = inflater.inflate(R.layout.default_list, container, false);
         ButterKnife.bind(this, rootView);
+        Resources res = getResources();
+
         // list of sites
         ArrayList<Attraction> sites = new ArrayList<>(Arrays.asList(
-                new Attraction("Fort Jesus", null,
-                        "Standing high over the Mombasa harbor, this museum is steeped in history"),
-                new Attraction("Giraffe Center", null,
-                        "Come feed the giraffes just outside Nairobi"),
-                new Attraction("Ol Pejeta Chimpanzee Sanctuary", null,
-                        "Home to rescued chimps from central and east Africa"),
-                new Attraction("Lamu Old Town", null,
-                        "A UNESCO World Heritage Site, a place with a unique culture and endearing atmosphere"),
-                new Attraction("Mt. Kenya National Park", null,
-                        "Mt. Kenya is Africa's second highest peak. A trek to point Lenana offers breathtaking views")
+                new Attraction(res.getStringArray(R.array.site_fortjesus)),
+                new Attraction(res.getStringArray(R.array.site_giraffe_center)),
+                new Attraction(res.getStringArray(R.array.site_ol_pejeta)),
+                new Attraction(res.getStringArray(R.array.site_lamu)),
+                new Attraction(res.getStringArray(R.array.site_mt_kenya))
         ));
         sitesList.setAdapter(new AttractionsAdapter(getContext(), sites));
         return rootView;

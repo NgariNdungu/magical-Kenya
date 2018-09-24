@@ -1,13 +1,13 @@
 package ke.co.openmaps.createchs.magicalkenya;
 
 
+import android.content.res.Resources;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ListView;
-import android.widget.TextView;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -34,18 +34,14 @@ public class EventsFragment extends Fragment {
                              Bundle savedInstanceState) {
         View rootView = inflater.inflate(R.layout.default_list, container,false);
         ButterKnife.bind(this, rootView);
+        Resources res = getResources();
         // list of events
         ArrayList<Attraction> events = new ArrayList<>(Arrays.asList(
-                new Attraction("Camel Derby", null,
-                        "Come race on camel back! Held in Maralal town every September"),
-                new Attraction("Lewa Marathon", "Run in the wild",
-                        "Race with the animals in the Lewa conservancy for a noble cause"),
-                new Attraction("Rhino Charge", "Wildest 4x4 event",
-                        "Tackle the toughest terrains to help save our rhinos"),
-                new Attraction("Lamu Cultural Festival", null,
-                        "Experience Lamu culture first-hand, catch the donkey races"),
-                new Attraction("L. Turkana Festival", null,
-                        "Experience colour and culture of the communities from Loyiangalani")
+                new Attraction(res.getStringArray(R.array.event_camel_derby)),
+                new Attraction(res.getStringArray(R.array.event_lewa_marathon)),
+                new Attraction(res.getStringArray(R.array.event_rhino_charge)),
+                new Attraction(res.getStringArray(R.array.event_lamu_festival)),
+                new Attraction(res.getStringArray(R.array.event_turkana_festival))
         ));
         eventsList.setAdapter(new AttractionsAdapter(getContext(),events));
         return rootView;
