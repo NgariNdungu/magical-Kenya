@@ -26,6 +26,13 @@ public class AttractionsAdapter extends ArrayAdapter<Attraction> {
     @BindView(R.id.attraction_image)
     ImageView imageView;
 
+    public static class ViewHolder {
+        TextView name;
+        TextView tag;
+        TextView description;
+        ImageView image;
+    }
+
     public AttractionsAdapter(@NonNull Context context, @NonNull ArrayList<Attraction> attractions) {
         super(context, 0, attractions);
     }
@@ -37,29 +44,37 @@ public class AttractionsAdapter extends ArrayAdapter<Attraction> {
             convertView = LayoutInflater.from(getContext()).inflate(
                     R.layout.attraction_list_item, parent, false
             );
+            ViewHolder viewHolder = new ViewHolder();
+            ButterKnife.bind(this, convertView);
+            viewHolder.name = nameTView;
+            viewHolder.tag = tagTView;
+            viewHolder.description = descTView;
+            viewHolder.image = imageView;
+            convertView.setTag(viewHolder);
         }
 
         // get attraction at current position
         Attraction currentAttraction = getItem(position);
-        ButterKnife.bind(this, convertView);
+        // get the view holder
+        ViewHolder holder = (ViewHolder) convertView.getTag();
         // set view content
-        nameTView.setText(currentAttraction.getName());
-        descTView.setText(currentAttraction.getDescription());
+        holder.name.setText(currentAttraction.getName());
+        holder.description.setText(currentAttraction.getDescription());
 
         // set the attraction image if available else remove ImageView from item
         if (currentAttraction.getImage() != 0) {
-            imageView.setImageResource(currentAttraction.getImage());
-            imageView.setVisibility(View.VISIBLE);
+            holder.image.setImageResource(currentAttraction.getImage());
+            holder.image.setVisibility(View.VISIBLE);
         } else {
-            imageView.setVisibility(View.GONE);
+            holder.image.setVisibility(View.GONE);
         }
 
         // set the tag text if available else remove the tag TextView from item
         if (!currentAttraction.getTag().isEmpty()) {
-            tagTView.setText(currentAttraction.getTag());
-            tagTView.setVisibility(View.VISIBLE);
+            holder.tag.setText(currentAttraction.getTag());
+            holder.tag.setVisibility(View.VISIBLE);
         } else {
-            tagTView.setVisibility(View.GONE);
+            holder.tag.setVisibility(View.GONE);
         }
         return convertView;
     }
